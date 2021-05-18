@@ -1,0 +1,35 @@
+.price-box__total{
+	display: block;
+	font-weight: 300;
+	text-align: right;
+	text-transform: uppercase;
+	padding-right: 50px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.price-box__total_sub{
+	font-size: 11px;
+	line-height: 13px;
+	color: #4a4a4a;
+	margin-bottom: 12px;
+}
+
+.price-box__total_grand{
+	font-size: 16px;
+	line-height: 19px;
+	color: #222;
+	margin-bottom: 17px;
+	padding-bottom: 21px;
+	border-bottom: 2px solid #e2e2e2;
+}
+
+.price-box__total_price{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.price-box__total_color{
+	color: #f16d7f;
+}

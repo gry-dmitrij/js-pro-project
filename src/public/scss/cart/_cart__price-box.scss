@@ -1,0 +1,14 @@
+.cart__price-box{
+	width: 100%;
+	max-width: 360px;
+	padding: 40px 44px;
+	box-sizing: border-box;
+	background-color: #f5f3f3;
+	margin: 57px 0 0;
+	@media (max-width: 1180px) {
+		margin-top: 40px;
+	}
+	@media (max-width: 480px) {
+		max-width: 100%;
+	}
+}

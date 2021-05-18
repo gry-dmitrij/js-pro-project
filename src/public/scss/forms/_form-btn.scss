@@ -1,0 +1,35 @@
+.form-btn{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+	padding: 15px 30px;
+	background: center no-repeat;
+	background-color: #f16d7f;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	white-space: normal;
+	&:hover{
+		background-color: #e05c6e;
+	}
+	&:active{
+		background-color: #f16d7f;
+	}
+}
+
+.form-btn_price{
+	font-size: 16px;
+	line-height: 19px;
+	width: 100%;
+	font-weight: 300;
+}
+
+.form-btn_reg{
+	margin: 20px 0;
+	padding: 16px 65px 15px 30px;
+	background-image: url("../img/right-arrow.svg");
+	background-position: right 30px center;
+}

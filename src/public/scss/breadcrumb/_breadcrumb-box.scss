@@ -1,0 +1,35 @@
+.breadcrumb-box{
+	display: flex;
+	list-style: none;
+	li:after{
+		content:'/';
+		margin: 0 5px;
+	}
+	a{
+		font-size: 14px;
+		line-height: 17px;
+		font-weight: 300;
+		color: #636363;
+		text-transform: uppercase;
+		text-decoration: none;
+		&:hover{
+			color: #fda973;
+		}
+		&:active{
+			text-decoration: underline;
+		}
+	}
+	:last-child a{
+		font-weight: 700;
+		color: #f16d7f;
+		&:after{
+			display: none;
+		}
+		&:hover{
+			color: #fda973;
+		}
+	}
+	@media (max-width: 600px) {
+		margin-top: 32px;
+	}
+}

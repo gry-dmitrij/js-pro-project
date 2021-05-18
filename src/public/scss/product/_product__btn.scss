@@ -1,0 +1,19 @@
+.product__btn{
+	text-transform: capitalize;
+	margin: 18px auto 0;
+	padding: 14px 38px;
+	font-size: 16px;
+	line-height: 19px;
+	background: transparent;
+	color: #F26376;
+	border: 1px solid #FF6A6A;
+	outline: none;
+	&:hover{
+		background: #F16D7F;
+		color: #FFFFFF;
+	}
+	&:active{
+		background: transparent;
+		color: #f26376;
+	}
+}

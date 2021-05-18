@@ -1,0 +1,26 @@
+.filter-nav__title{
+	font-weight: 600;
+	color: #000;
+	text-transform: uppercase;
+	position: relative;
+	padding-right: 26px;
+	&:after{
+		content: '';
+		width: 15px;
+		height: 10px;
+		top: calc(50% - 5px);
+		right: 0;
+		position: absolute;
+		background: center / cover no-repeat url("../img/filter_ico.svg");
+		visibility: visible;
+	}
+	@media (max-width: 480px) {
+		visibility: hidden;
+		display: block;
+		width: 0;
+		&:after{
+			width: 38px;
+			height: 25px;
+		}
+	}
+}

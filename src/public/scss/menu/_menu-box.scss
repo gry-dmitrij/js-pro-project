@@ -1,0 +1,17 @@
+.menu-box{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	max-height: 0;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5);
+	transition: max-height 1s;
+	overflow: hidden;
+	z-index: 3;
+}
+
+.top__menu-chb:checked ~ .menu-box{
+	max-height: 1000px;
+}

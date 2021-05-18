@@ -1,0 +1,6 @@
+.nav-list__chb{
+	display: none;
+	&:checked ~ .filter-nav__list_sub{
+		display: block;
+	}
+}

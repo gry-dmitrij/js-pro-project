@@ -1,0 +1,8 @@
+.cart__card-img{
+	width: 45%;
+	height: auto;
+	display: block;
+	@media (max-width: 480px) {
+		height: 100%;
+	}
+}
