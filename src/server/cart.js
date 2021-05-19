@@ -1,4 +1,5 @@
 const add = (cart, req) => {
+  if (!cart.contents) cart.contents = [];
   cart.contents.push(req.body);
   calc(cart);
   return JSON.stringify(cart, null, 4);

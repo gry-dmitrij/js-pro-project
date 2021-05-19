@@ -5,7 +5,7 @@ const cart = require('./cart');
 const handler = require('./handler');
 
 router.get('/', (req, res) => {
-    fs.readFile('./db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile('./server/db/userCart.json', 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404).send(JSON.stringify({result: 0, text: err}));
         } else {
@@ -16,19 +16,21 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log('Метод post');
     check(req, () => {
-        handler(req, res, cart.add, './db/userCart.json');
+        console.log('post: after check');
+        handler(req, res, cart.add, './server/db/userCart.json');
     })
 
 });
 // localhost:3000/api/cart/123 // req.params.id
 // localhost:3000/api/cart/?var1='sfsf'&var2='ada' // req.query
 router.put('/:id', (req, res) => {
-    handler(req, res, cart.change, './db/userCart.json');
+    handler(req, res, cart.change, './server/db/userCart.json');
 });
 
 router.delete('/:id', (req, res) => {
-    handler(req, res, cart.del, './db/userCart.json');
+    handler(req, res, cart.del, './server/db/userCart.json');
 });
 
 // проверяем, что от пользователя пришел верный товар
@@ -41,7 +43,8 @@ const check = (request, ok, notOk) => {
         notOk = () => null;
     try {
         const prod = request.body;
-        fs.readFile('./db/products.json', 'utf-8', (err, data) => {
+        fs.readFile('./server/db/products.json', 'utf-8', (err, data) => {
+            console.log('error: ' + err);
             if (err) notOk(err)
             else {
                 const products = JSON.parse(data);

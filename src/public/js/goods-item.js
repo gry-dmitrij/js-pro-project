@@ -24,7 +24,9 @@ export let GoodsItem = {
             const product = {
                 id_product: this.id_product,
                 product_name: this.product_name,
-                price: this.price
+                price: this.price,
+                img: this.img,
+                description: this.description
             };
             this.$emit('add-product', product);
         }

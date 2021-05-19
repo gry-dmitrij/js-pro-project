@@ -40,7 +40,7 @@ const stat = (name, req, data) => {
 }
 
 const addStatRecord = (statRec) => {
-    const statFile = './db/stats.json';
+    const statFile = './server/db/stats.json';
     fs.readFile(statFile, 'utf-8', (err, data) => {
         let actions = [];
         if (err) {

@@ -1,4 +1,5 @@
 import {GetData} from "./get-data";
+import {CartItem} from "./cart-item";
 
 export let Cart = {
     mixins: [GetData],

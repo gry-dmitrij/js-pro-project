@@ -4,29 +4,19 @@ const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = (env, options) => {
-    console.log('mode: ' + options.mode);
     const devMode = options.mode === 'development';
     return {
         entry: {
             main: ["@babel/polyfill", "./src/public/index.js"]
         },
-        watch: devMode ,
+        watch: devMode,
         output:
             {
                 path: path.join(__dirname, 'dist/public'),
-                publicPath:
-                    "/",
-                filename:
-                    "js/[name].js",
+                publicPath: "/",
+                filename: "js/[name].js",
                 // assetModuleFilename: '[name][ext]'
             },
-        node: {
-            global: false,
-            __filename:
-                false,
-            __dirname:
-                false,
-        },
         stats: {
             children: true,
             errorDetails:
@@ -41,7 +31,19 @@ module.exports = (env, options) => {
                     {
                         test: /\.s[ac]ss$|\.css$/i,
                         use: [
-                            MiniCssExtractPlugin.loader,
+                            {
+                                loader: MiniCssExtractPlugin.loader,
+                                options: {
+                                    publicPath: '../'
+                                }
+                            },
+                            // {
+                            //     loader: 'file-loader',
+                            //     options: {
+                            //         name: './css/style.css'
+                            //     },
+                            // },
+                            // 'style-loader',
                             'css-loader',
                             'sass-loader'
                         ]
@@ -93,18 +95,18 @@ module.exports = (env, options) => {
                 ]
             },
         plugins: [
-            new MiniCssExtractPlugin({
-                filename: './css/style.css',
-            }),
-            // new CopyPlugin({
-            //     patterns: [
-            //         {
-            //             from: "./src/public/*.html",
-            //             to: "[name].html"
-            //         },
-            //
-            //     ]
+            // new MiniCssExtractPlugin({
+            //     filename: 'css/style.css',
             // }),
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: "./src/public/css/",
+                        to: "./css/[name].css"
+                    },
+
+                ]
+            }),
             // new HtmlPlugin({
             //     template: 'src/public/',
             //     filename: '[name].html',
