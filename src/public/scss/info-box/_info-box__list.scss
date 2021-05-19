@@ -1,0 +1,21 @@
+.info-box__list{
+	margin: 21px 0;
+	& > li{
+		position: relative;
+		padding: 0 0 0 33px;
+		list-style: none;
+		margin: 0 0 16px 0;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&:before{
+			content: '';
+			width: 20px;
+			height: 16px;
+			position: absolute;
+			top: calc(50% - 8px);
+			left: 0;
+			background: center / contain no-repeat url("../img/tick.svg");
+		}
+	}
+}

@@ -1,0 +1,28 @@
+.cart__card-btn{
+	padding: 17px 40px;
+	text-transform: uppercase;
+	border: 1px solid #a4a4a4;	
+	background-color: transparent;
+	color: #000;
+	outline: none;
+	margin-bottom: 15px;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 300;
+	&:hover{
+		background-color: #f16d7f;
+		border-color: #f16d7f;
+		color: #fff;
+	}
+	&:active{
+		background-color: transparent;
+		border-color: #a4a4a4;
+		color: #000;
+	}
+	@media (max-width: 600px) {
+		font-size: 12px;
+		line-height: 14px;
+		padding: 8px;
+		width: 48%;
+	}
+}

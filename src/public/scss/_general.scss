@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Lato, sans-serif;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+.right-txt{
+	font-size: 16px;
+	line-height: 19px;
+	color: #FBFBFB;
+	text-transform: capitalize;
+	@media (max-width: 480px) {
+		order: 2;
+		margin-top: 25px;
+	}
+}

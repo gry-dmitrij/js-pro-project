@@ -1,0 +1,17 @@
+.cart__card-txt{
+	font-size: 22px;
+	line-height: 26px;
+	font-weight: 400;
+	color: #575757;
+	margin-bottom: 6px;
+	display: block;
+	text-transform: capitalize;
+	@media (max-width: 600px) {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
+
+.cart__card-txt_price{
+	color: #ef5b70;
+}

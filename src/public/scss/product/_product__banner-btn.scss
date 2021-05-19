@@ -1,0 +1,27 @@
+$btn-banner-mini-width: 47px;
+
+.product__banner-btn_mini{
+	width: $btn-banner-mini-width;
+	height: $btn-banner-mini-width;
+	position: absolute;
+	top: calc(50% - #{$btn-banner-mini-width} / 2);
+	outline: none;
+	border: none;
+	background: center no-repeat rgba(42, 42, 42, 0.15);
+	&:hover{
+		box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+	}
+	&:active{
+		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+}
+
+.product__banner-btn_next{
+	right: 0;
+	background-image: url("../img/next_btn.svg");
+}
+
+.product__banner-btn_prev{
+	left: 0;
+	background-image: url("../img/prev_btn.svg");
+}

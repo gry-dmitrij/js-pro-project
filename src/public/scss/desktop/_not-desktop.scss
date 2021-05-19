@@ -1,0 +1,5 @@
+.not-desktop_small{
+	@media (min-width: 768px) and (max-width: 1180px) {
+		display: none;
+	}
+}

@@ -1,0 +1,24 @@
+.pagination__btn{
+	width: 8px;
+	height: 14px;
+	background: center / contain no-repeat;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	&:hover{
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	&:active{
+		box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+}
+
+.pagination__btn_prev{
+	background-image: url("../img/prev_btn.svg");
+	margin-right: 17px;
+}
+
+.pagination__btn_next{
+	background-image: url("../img/next_btn.svg");
+	margin-left: 17px;
+}

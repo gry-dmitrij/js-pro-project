@@ -1,0 +1,35 @@
+button.filter__item{
+	cursor: pointer;
+}
+
+.filter__item{
+	display: flex;
+	position: relative;
+    padding: 0 20px 0 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #6f6e6e;
+    margin: 0 28px 0 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    &:last-child{
+    	margin-right: 0;
+    }
+    @media (max-width: 480px) {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+.filter__item:after{
+	content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 5px;
+    top: calc(50% - 2px);
+    right: 0;
+    margin-left: 10px;
+    background: center/contain no-repeat url(../img/chevron-down.svg);
+}

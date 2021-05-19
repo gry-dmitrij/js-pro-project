@@ -1,0 +1,14 @@
+.subscribe__btn{
+	outline: none;
+	border: none;
+	background: #f16d7f;
+	color: #ffffff;
+	padding: 15px 22px;
+	border-radius: 0 30px 30px 0;
+	&:hover{
+		background: #e05c6e;
+	}
+	&:active{
+		background: #f16d7f;
+	}
+}

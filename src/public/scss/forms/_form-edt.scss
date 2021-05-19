@@ -1,0 +1,31 @@
+.form-edt{
+	width: 100%;
+	max-width: 360px;
+	padding: 13px 17px 16px;
+	margin: 10px 0;
+	color: #222;
+	box-sizing: border-box;
+	border: 1px solid #a4a4a4;
+	outline: none;
+	font-size: 13px;
+	line-height: 16px;
+	&:focus{
+		border-color: black;
+	}
+	@media (max-width: 480px) {
+		max-width: 100%;
+	}
+}
+
+input.form-edt:-ms-input-placeholder{
+	color: #b1b1b1;
+}
+
+input.form-edt::placeholder{
+	color: #b1b1b1;
+}
+
+input.form-edt_cap::placeholder{
+	text-transform: capitalize;
+}
+

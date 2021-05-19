@@ -1,0 +1,16 @@
+.cart-box{
+	display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 96px 20px 128px;
+    box-sizing: border-box;
+    @media (max-width: 1180px) {
+    	flex-flow: column;
+    	align-items: center;
+    	justify-content: center;
+    	padding-top: 60px;
+    }
+    @media (max-width: 480px) {
+        padding: 40px 6px 96px;
+    }
+}

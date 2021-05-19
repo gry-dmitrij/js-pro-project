@@ -1,0 +1,44 @@
+.card{
+	background: center / cover no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 32%;
+	padding: 9.5% 0;
+	margin-bottom: 30px;
+	@media (max-width: 480px) {
+		width: 100%;
+		padding: 29.5% 0;
+	}
+}
+
+.card_wide{
+	padding: 8% 0;
+	width: 100%;
+	background-image: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url("../img/accesories.png");
+}
+
+.card_for-women{
+	background-image: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url("../img/for_women.png");
+}
+
+.card_for-men{
+	background-image: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url("../img/for_men.png");
+}
+
+.card_for-kids{
+	background-image: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url("../img/for_kids.png");
+}
+
+.card:last-child{
+	margin-bottom: 0;
+}
+
+.card_fill{
+	flex-basis: 100%;
+}
+
+.card:last-child{
+	margin-right: 0;
+}

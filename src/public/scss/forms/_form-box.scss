@@ -1,0 +1,27 @@
+.form-box{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-flow: column;
+	width: 360px;
+	box-sizing: border-box;
+	@media (max-width: 480px) {
+		width: 100%;
+		padding: 0 8px;
+		
+	}
+}
+
+.form-box_compact{
+	@media (max-width: 1180px) and (min-width: 600px) {
+		width: 100%;
+		flex-wrap: wrap;
+		max-height: 400px;
+		padding: 0 3%;
+		& > .form-edt,
+		& > .cart__price-box,
+		& > .form-lbl-caption{
+			width: 49%;
+		}
+	}
+}

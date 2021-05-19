@@ -1,0 +1,24 @@
+.menu__close-btn{
+	width: 12px;
+	height: 12px;
+	background: url("../img/close_ico.svg") center / contain no-repeat;
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	&:hover{
+		width: 14px;
+		height: 14px;
+		right: 15px;
+		top: 15px;
+	}
+	&:active{
+		background-color: transparent;
+		width: 12px;
+		height: 12px;
+		right: 16px;
+		top: 16px;
+	}
+}
