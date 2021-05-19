@@ -33,6 +33,7 @@ export let Cart = {
                 for (const el of data.contents) {
                     this.goods.push(el);
                 }
+                this.goodsChanged();
             });
     },
     components: {
@@ -51,6 +52,7 @@ export let Cart = {
                 .then(data => {
                     if (data.result === 1) {
                         this.goods.splice(index, 1);
+                        this.goodsChanged();
                     }
                 })
         },
@@ -69,9 +71,18 @@ export let Cart = {
                     .then(data => {
                         if (data.result === 1) {
                             this.goods.push(prod);
+                            this.goodsChanged();
                         }
                     });
             }
+        },
+        goodsChanged() {
+            this.$emit('goods-changed', this.goods.length);
+        }
+    },
+    computed: {
+        length() {
+            return this.goods.length;
         }
     }
 }

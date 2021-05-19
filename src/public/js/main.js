@@ -3,11 +3,15 @@ import {Goods} from './goods';
 import {Cart} from "./cart";
 import {Search} from "./search";
 
-const app = new Vue({
+const vm = new Vue({
     el: '#app',
     data: {
         isVisibleCart: false,
         filterLine: '',
+        cartCount: 0,
+    },
+    mounted() {
+        this.isMounted = true;
     },
     components: {
         'cart': Cart,
@@ -20,8 +24,11 @@ const app = new Vue({
         },
         addProduct(product) {
             this.$refs.cart.addProduct(product);
+        },
+        cartCountChanged(amount) {
+            this.cartCount = amount;
         }
-    }
+    },
 })
 
-export default app;
+export default vm;

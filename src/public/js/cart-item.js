@@ -22,7 +22,7 @@ export const CartItem = {
     template:
         `<div class="cart-item" :data-id="id_product">
             <div class="product-bio">
-                <img src="https://via.placeholder.com/50x100" alt="Some img">
+                <img :src="img" width="80" alt="Some img">
                 <div class="product-desc">
                     <p class="product-title">{{product_name}}</p>
                     <p class="product-quantity">Количество: {{countItem}}</p>

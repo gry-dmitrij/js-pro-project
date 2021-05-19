@@ -1466,6 +1466,7 @@ input.form-edt_cap::placeholder {
   padding: 20px;
   color: black;
   width: 300px;
+  z-index: 5;
 }
 
 .invisible{
@@ -1481,4 +1482,8 @@ input.form-edt_cap::placeholder {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid white;
+}
+
+.product-bio {
+  display: flex;
 }
