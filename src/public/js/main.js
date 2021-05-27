@@ -1,4 +1,4 @@
-import Vue from './vue'
+import Vue from 'vue';
 import {Goods} from './goods';
 import {Cart} from "./cart";
 import {Search} from "./search";

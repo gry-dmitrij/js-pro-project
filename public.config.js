@@ -18,7 +18,7 @@ function generateHTMLPlugins(inject = true) {
             return new HtmlPlugin({
                 template: item,
                 filename: item,
-                inject: inject
+                inject: inject,
             })
         })
 }
@@ -45,6 +45,13 @@ module.exports = (env, options) => {
         },
         target: 'web',
         devtool: devMode ? 'eval-source-map' : 'source-map',
+        mode: devMode ? 'development' : 'production',
+        resolve: {
+            alias: {
+                vue$: devMode ? path.resolve(__dirname, inputDir, 'js/vue.js') :
+                    path.resolve(__dirname, inputDir, 'js/vue.min.js')
+            }
+        },
         module:
             {
                 rules: [
@@ -137,7 +144,7 @@ module.exports = (env, options) => {
                 filename: 'css/style.css',
 
             }),
-            new CleanWebpackPlugin(),
+            new CleanWebpackPlugin({cleanStaleWebpackAssets:false}),
             new VueLoaderPlugin(),
             new CopyPlugin({
                 patterns: [
