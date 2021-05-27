@@ -1,21 +1,42 @@
 const path = require('path');
+const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader')
+const CopyPlugin = require('copy-webpack-plugin');
+
+const inputDir = 'src/public';      // входная директория
+const outputDir = 'dist/public';    // выходная директория
+
+// генерирует конфигурации для html-webpack-pugin,
+// проходя по всем html файлам в директории
+function generateHTMLPlugins(inject = true) {
+    const templateFiles = fs.readdirSync(path.resolve(__dirname, inputDir));
+    return  templateFiles.filter(item => /\.html/i.test(path.extname(item)))
+        .map(item => {
+            return new HtmlPlugin({
+                template: item,
+                filename: item,
+                inject: inject
+            })
+        })
+}
+
 
 module.exports = (env, options) => {
     const devMode = options.mode === 'development';
     return {
+        context: path.resolve(__dirname, inputDir),
         entry: {
-            main: ["@babel/polyfill", "./src/public/index.js"]
+            main: ['@babel/polyfill', './index.js']
         },
         watch: devMode,
         output:
             {
-                path: path.join(__dirname, 'dist/public'),
-                publicPath: "/",
+                path: path.join(__dirname, outputDir),
+                publicPath: "./",
                 filename: "js/[name].js",
-                // assetModuleFilename: '[name][ext]'
             },
         stats: {
             children: true,
@@ -23,27 +44,30 @@ module.exports = (env, options) => {
                 true
         },
         target: 'web',
-        devtool:
-            "source-map",
+        devtool: devMode ? 'eval-source-map' : 'source-map',
         module:
             {
                 rules: [
                     {
-                        test: /\.s[ac]ss$|\.css$/i,
+                        test: /\.m?js$/i,
+                        exclude: /node_models/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env']
+                            }
+                        }
+                    },
+                    {
+                        test: /\.(s[ac]|c)ss$/i,
                         use: [
-                            {
+                            devMode ? 'style-loader' :
+                                {
                                 loader: MiniCssExtractPlugin.loader,
                                 options: {
-                                    publicPath: '../'
+                                    publicPath: '../',
                                 }
                             },
-                            // {
-                            //     loader: 'file-loader',
-                            //     options: {
-                            //         name: './css/style.css'
-                            //     },
-                            // },
-                            // 'style-loader',
                             'css-loader',
                             'sass-loader'
                         ]
@@ -54,9 +78,17 @@ module.exports = (env, options) => {
                             loader: 'file-loader',
                             options: {
                                 outputPath: (url, resPath, context) => {
-                                    const relPath = path.relative(
-                                        path.join(context, 'src', 'public'), resPath);
-                                    return relPath;
+                                    if (/products/i.test(resPath)) {
+                                        return path.posix.relative(
+                                            context.replace(/\\/g, '/'), resPath.replace(/\\/g, '/'));
+                                    }
+                                    const hash = path.parse(url).name;
+                                    const fileObj = path.parse(path.posix.relative(
+                                        context.replace(/\\/g, '/'), resPath.replace(/\\/g, '/')));
+                                    const name = devMode ?
+                                        `${fileObj.name}.${hash + fileObj.ext}` :
+                                        `${hash + fileObj.ext}`;
+                                    return path.posix.join(fileObj.dir, name);
                                 },
                             }
                         }
@@ -70,47 +102,51 @@ module.exports = (env, options) => {
                     },
                     {
                         test: /\.html$/i,
-                        type: 'asset/resource',
-                        generator: {
-                            filename: '[name][ext]',
-                        }
+                        use: [
+                            {
+                                loader: 'html-loader',
+                                options: {
+                                    attributes: {
+                                        list: [
+                                            '...',
+                                            {
+                                                // для ручного добавления тэгов link напрямую в html
+                                                // без этого выдает ошибку
+                                                // но импортировать нужно при этом отдельно
+                                                tag: 'link',
+                                                attribute: 'href',
+                                                type: 'src',
+                                                filter: (tag, attribute, attributes, resourcePath) => {
+                                                    return tag !== 'link';
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                        ],
                     },
-                    // {
-                    //     test: /\.html$/i,
-                    //     use: [
-                    //         //'extract-loader',
-                    //         // {
-                    //         //     loader: 'file-loader',
-                    //         //     options: {
-                    //         //         name: '[name].[ext]'
-                    //         //     }
-                    //         // },
-                    //         // 'null-loader',
-                    //         'file-loader',
-                    //         'extract-loader',
-                    //         'ref-loader',
-                    //         'html-loader'
-                    //     ],
-                    // }
+                    {
+                        test: /\.vue$/,
+                        loader: 'vue-loader'
+                    }
                 ]
             },
         plugins: [
-            // new MiniCssExtractPlugin({
-            //     filename: 'css/style.css',
-            // }),
+            new MiniCssExtractPlugin({
+                filename: 'css/style.css',
+
+            }),
+            new CleanWebpackPlugin(),
+            new VueLoaderPlugin(),
             new CopyPlugin({
                 patterns: [
                     {
-                        from: "./src/public/css/",
-                        to: "./css/[name].css"
-                    },
-
+                        from: 'img/products',
+                        to: 'img/products/[name].[ext]'
+                    }
                 ]
-            }),
-            // new HtmlPlugin({
-            //     template: 'src/public/',
-            //     filename: '[name].html',
-            // })
-        ]
+            })
+        ].concat(generateHTMLPlugins())
     }
 }
