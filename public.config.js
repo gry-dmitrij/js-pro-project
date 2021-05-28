@@ -141,7 +141,7 @@ module.exports = (env, options) => {
             },
         plugins: [
             new MiniCssExtractPlugin({
-                filename: 'css/style.css',
+                filename: 'css/style.[hash].css',
 
             }),
             new CleanWebpackPlugin({cleanStaleWebpackAssets:false}),
