@@ -50,7 +50,8 @@ module.exports = (env, options) => {
             alias: {
                 vue$: devMode ? path.resolve(__dirname, inputDir, 'js/vue.js') :
                     path.resolve(__dirname, inputDir, 'js/vue.min.js')
-            }
+            },
+            extensions: ['.js', '.json', '.vue']
         },
         module:
             {
