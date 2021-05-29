@@ -3,8 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--	<link rel="stylesheet" href="css/normalize.css">-->
-<!--	<link rel="stylesheet" href="css/style.css">-->
 	<title>Main</title>
 </head>
 <body>
@@ -78,8 +76,9 @@
 					<span class="basket-items" v-if="cartCount !== 0">{{cartCount}}</span>
 				</button>
 			</div>
+			<cart ref="cart" :is-visible="isVisibleCart" v-on:goods-changed="cartCountChanged"></cart>
 		</section>
-		<cart ref="cart" :is-visible="isVisibleCart" v-on:goods-changed="cartCountChanged"></cart>
+
 	</header>
 
 	<main>

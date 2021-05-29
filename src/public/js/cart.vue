@@ -96,7 +96,7 @@ export default {
   border-radius: 5px;
   box-sizing: border-box;
   right: 0;
-  top: 130%;
+  top: calc(100% + 15px);
   position: absolute;
   background-color: white;
   padding: 20px;

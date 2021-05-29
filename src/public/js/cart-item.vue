@@ -8,7 +8,7 @@
         <p class="product-single-price">{{ price }} за ед.</p>
       </div>
       <div class="right-block">
-        <p class="product-price">{{ sumPrice }} ₽</p>
+        <p class="product-price">{{ sumPrice }}&nbsp;₽</p>
         <button class="del-btn" :data-id="id_product" v-on:click="subProduct">×</button>
       </div>
     </div>
