@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import {Goods} from './goods';
-import {Cart} from "./cart";
-import {Search} from "./search";
+import Goods from './goods';
+import Cart from './cart';
+import Search from './search';
 
 const vm = new Vue({
     el: '#app',
