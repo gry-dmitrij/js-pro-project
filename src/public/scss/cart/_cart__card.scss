@@ -1,0 +1,13 @@
+.cart__card{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: relative;
+	width: 100%;
+	min-width: 516px;
+	margin-bottom: 40px;
+	box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+	@media (max-width: 600px) {
+		min-width: 0;
+	}
+}

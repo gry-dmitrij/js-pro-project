@@ -1,0 +1,12 @@
+.footer__subscribe-card{
+	display: block;
+	padding: 86px 0 126px;
+	margin: 0;
+	@media (max-width: 768px) {
+		padding: 0;
+		margin-bottom: 48px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+}

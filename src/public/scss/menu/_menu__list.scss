@@ -1,0 +1,28 @@
+.menu__list{
+	list-style: none;
+}
+
+.menu__list > li,
+.menu__list > li > *{
+	font-size: 14px;
+	line-height: 17px;
+	color: #6f6e6e;
+	text-decoration: none;
+	text-transform: none;
+	margin-bottom: 11px;
+}
+
+.menu__list > li:first-child{
+	margin-top: 12px;
+}
+
+.menu__list_main > li,
+.menu__list_main > li > *{
+	color: #f16d7f;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.menu__list_sub{
+	margin-left: 21px;
+}

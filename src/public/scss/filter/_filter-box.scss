@@ -1,0 +1,10 @@
+.filter-box{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin-top: 50px;
+	@media (max-width: 768px) {
+		justify-content: flex-end;
+	}
+}

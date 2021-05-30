@@ -1,0 +1,63 @@
+.product__add-btn{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	visibility: hidden;
+	position: absolute;
+	margin: 187px auto;
+	padding: 10px 13px 8px;
+	font-size: 14px;
+	line-height: 17px;
+	color: #fff;
+	border: 1px solid #FFFFFF;
+	background: transparent;
+	outline: none;
+	cursor: pointer;
+	z-index: 1;
+	&:before{
+		content: '';
+		display: block;
+		width: 26px;
+		height: 24px;
+		background: url("../img/basket_ico.svg") center / contain no-repeat;
+		margin-right: 11px;
+	}
+	&:hover{
+		background: #f16d7f;
+		border: 1px solid #f16d7f;
+	}
+	&:active{
+		background: transparent;
+		border: 1px solid #fff;
+
+	}
+}
+.product__add-btn_visible{
+	border-color: #ff6a6a;
+	color: #ef5b70;
+	margin-top: 48px;
+	visibility: visible;
+	position: relative;
+	min-width: 210px;
+	&:before{
+		background-image: url("../img/basket_ico_red.svg");
+	}
+	&:hover{
+		color: #fff;
+		&:before{
+			background-image: url("../img/basket_ico.svg");
+		}
+	}
+	&:active{
+		color: #ef5b70;
+		border: 1px solid #f16d7f;
+		&:before{
+			background-image: url("../img/basket_ico_red.svg");
+		}
+	}
+}
+
+.product-card__img-box:hover .product__add-btn{
+  display: flex;
+}

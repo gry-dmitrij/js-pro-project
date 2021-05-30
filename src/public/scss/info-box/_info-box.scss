@@ -1,0 +1,23 @@
+.info-box{
+	width: 58%;
+	margin: 0 0 0 22px;
+	@media (max-width: 600px) {
+		width: 100%;
+		max-width: 360px;
+		margin: 0;
+	}
+	@media (max-width: 480px) {
+		max-width: 100%;
+	}
+}
+
+.info-box *{
+	font-size: 24px;
+	line-height: 29px;
+	font-weight: 300;
+	color: #000;
+	@media (max-width: 1180px) {
+		font-size: 16px;
+		line-height: 19px;
+	}
+}

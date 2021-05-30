@@ -1,0 +1,9 @@
+.product-box{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 65px 0;
+	@media (max-width: 1180px) {
+		justify-content: space-around;
+	}
+}

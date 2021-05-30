@@ -1,0 +1,11 @@
+.footer__subscribe-box{
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: 768px) {
+		flex-flow: column;
+		justify-content: center;
+		padding: 54px 0 140px;
+	}
+}

@@ -1,0 +1,23 @@
+.social-link{
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 7px;
+	text-decoration: none;
+	background-color: #fff;
+	fill: #000;
+	&:hover{
+		background-color: #f16d7f;
+		fill: #fff;
+	}
+	&:active{
+		background-color: #fff;
+		fill: #000;
+	}
+}
+
+.social-link:last-child{
+	margin-right: 0;
+}

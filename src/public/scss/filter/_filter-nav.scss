@@ -1,0 +1,22 @@
+.filter-nav{
+	position: absolute;
+	left: -13px;
+	top: -16px;
+	min-width: 360px;
+	background: #ffffff;
+	padding: 13px 30px;
+	box-sizing: border-box;
+	&:hover{
+		box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+		z-index: 1;
+		.filter-nav__list{
+			display: block;
+		}
+		.filter-nav__title{
+			color: #ef5b70;
+			&:after{
+				background: center / cover no-repeat url("../img/filter_ico_red.svg");
+			}
+		}
+	}
+}

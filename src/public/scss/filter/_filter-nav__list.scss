@@ -1,0 +1,21 @@
+.filter-nav__list{
+	display: none;
+	list-style: none;
+	margin-top: 16px;
+}
+
+.filter-nav__list_sub{
+	display: none;
+	padding-left: 24px;
+	font-weight: 400;
+	color: #6f6e6e;
+	text-transform: capitalize;
+	list-style: none;
+	li{
+		margin-bottom: 11px;
+	}
+	a{
+		color: #6f6e6e;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,24 @@
+.box_edge,
+.box_center,
+.box_column{
+	display: flex;
+}
+
+.box_edge{
+	justify-content: space-between;
+	align-items: center;
+}
+
+.box_center{
+	justify-content: center;
+}
+
+.box_bottom{
+	align-items: flex-end;
+}
+
+.box_column{
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-flow: column;
+}

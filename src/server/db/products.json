@@ -1,0 +1,44 @@
+[
+  {
+    "id_product": 124,
+    "product_name": "Мужская куртка",
+    "price": 1000.00,
+    "img": "img/products/man-jacket.jpg",
+    "description": "Known for her sculptural takes on\u00A0traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."
+  },
+  {
+    "id_product": 125,
+    "product_name": "Женский костюм",
+    "price": 1500.00,
+    "img": "img/products/trouser-suit.jpg",
+    "description": "Known for her sculptural takes on\u00A0traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."
+  },
+  {
+    "id_product": 126,
+    "product_name": "Мужской свитер",
+    "price": 2000.00,
+    "img": "img/products/man-pullover.jpg",
+    "description": "Known for her sculptural takes on\u00A0traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."
+  },
+  {
+    "id_product": 127,
+    "product_name": "Мужская футболка",
+    "price": 1800.00,
+    "img": "img/products/trousers.jpg",
+    "description": "Known for her sculptural takes on\u00A0traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."
+  },
+  {
+    "id_product": 128,
+    "product_name": "Женский пиджак",
+    "price": 2300.00,
+    "img": "img/products/woman-suit.jpg",
+    "description": "Known for her sculptural takes on\u00A0traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."
+  },
+  {
+    "id_product": 129,
+    "product_name": "Женская рубашка",
+    "price": 2400.00,
+    "img": "img/products/chemise.jpg",
+    "description": "Known for her sculptural takes on\u00A0traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi."
+  }
+]
